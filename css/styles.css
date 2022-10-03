@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+/* -------Start Progress-------- */
+#progress{
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+    display: grid;
+    place-items: center;
+
+    z-index: 10;
+}
+#progressvalues {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    background-color: white;
+    border-radius: 50%;
+    font-weight: bold;
+
+    display: grid;
+    place-items: center;
+}
+/* -------End Progress-------- */
+
+/* ------------------------- Start Header---------------------------- */
+
+/* ------------- start header intro----------- */
+.headerintros {
+    height: 50px;
+    background-color: blue;
+
+    display: none;
+}
+.headerintros .infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    font-weight: light;
+}
+@media screen and (min-width: 1200px) {
+    .headerintros { display: block; }
+}
+/* ------------- end header intro----------- */
+
+/* ------------- start banner----------- */
+.carousel-item {
+    height: 60vh;
+}
+.banner1 {
+    background: url("../assets/images/banner/banner4.jpg") no-repeat center center/cover;
+}
+.banner2 {
+    background: url("../assets/images/banner/banner5.jpg") no-repeat center center/cover;
+}
+.banner3 {
+    background: url("../assets/images/banner/banner6.jpg") no-repeat center center/cover;
+}
+.btn-blues {
+    background-color: darkblue;
+    color: white;
+}
+/* ------------- end banner----------- */
+
+/* ------------------------- End Header---------------------------- */
+
+/* ------------------------- Start Features---------------------------- */
+.icon-boxes {
+    padding: 50px 20px;
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+} 
+.icons {
+    width: 70px;
+    height: 70px;
+    background-color: darkturquoise;
+    color: white;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    left: calc(50% - 35px);
+    top: -35px;
+}
+.icons:hover {
+    background: white;
+    color: darkturquoise;
+    border: 2px solid darkturquoise;
+}
+/* ------------------------- End Features---------------------------- */
+
+/* ------------------------- Start Info---------------------------- */
+.fromlefts.active{
+    animation: myleft 3s;
+}
+.fromrights.active{
+    animation: myright 3s;
+}
+
+@keyframes myleft {
+    from{
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes myright {
+    from{
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/* ------------------------- End Info---------------------------- */
+
+/* ------------------------- Start Adv---------------------------- */
+.advs {
+    height: 300px;
+    background: url("../assets/images/banner/banner1.jpg") no-repeat center top/cover;
+    color: #fff;
+    text-shadow: -5px 0 10px #000;
+
+    display: flex;
+    align-items: center;
+}
+/* ------------------------- End Adv---------------------------- */
+
+/* ------------------------- Start Departments---------------------------- */
+.deptboxes {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.deptboxes img {
+    width: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.deptboxes .contents {
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    text-align: center;
+
+    position: absolute;
+    left: 10%;
+    bottom: -87%;
+
+    transition: all .5s;
+}
+
+.deptboxes a {
+    background-color: steelblue;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+
+    display: inline-block;
+    margin-top: 10px;
+    opacity: 0;
+
+    transition: all .5s;
+}
+
+.deptboxes:hover .contents {
+    width: 100%;
+    height: 65%;
+
+    left: 0;
+    bottom: 0;
+}
+
+.deptboxes:hover a {
+    opacity: 1;
+    transition-delay: .3s;
+}
+
+.deptboxes:hover img {
+    transform: scale(1.2);
+}
+
+.deptboxes h3 {
+    color: steelblue;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-top: 6px;
+
+}
+
+.deptboxes p {
+    width: 80%;
+    font-size: 13px;
+    margin: 5px auto;
+}
+/* ------------------------- End Departments---------------------------- */
+
+/* ------------------------- Start Pricing---------------------------- */
+.pricingboxes:nth-child(1).active {
+    animation: movefromleft 2s;
+}
+
+.pricingboxes:nth-child(2).active {
+    animation: movefrombottom 2s;
+}
+
+.pricingboxes:nth-child(3).active {
+    animation: movefromright 2s;
+}
+
+.pricingcards {
+    background-color: white;
+    text-align: center;
+    border: 0.2px solid rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+.pricingcards:hover {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transform: translateY(-20px);
+}
+
+.pricingcards .pricingheaders {
+    padding: 50px 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+.pricingcards:hover .pricingheaders {
+    background: linear-gradient(to right,blue,skyblue);
+    color: white;
+}
+
+.pricingcards .prices {
+    color: blue;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.pricingcards .pricingfeatures ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.pricingcards .pricingfooters .btn-pricings {
+    background: linear-gradient(to right,blue,skyblue);
+    color: white;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.pricingcards:hover .pricingfooters .btn-pricings {
+    background: linear-gradient(to left, blue, skyblue);
+}
+
+
+@keyframes movefromleft {
+    from{
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes movefromright {
+    from{
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes movefrombottom {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* ------------------------- End Pricing---------------------------- */
+
+.socialicons a {
+    color: white;
+    border: 1px solid #f4f4f4;
+    padding: 5px;
+    margin: 0 5px;
+}
+.socialicons a:hover {
+    background-color: blue;
+}
+
+.footerlinks {
+    color: #eee;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.footerlinks:hover {
+    color: orange;
+    border-bottom: 1px solid orange;
+    letter-spacing: 1px;
+}
